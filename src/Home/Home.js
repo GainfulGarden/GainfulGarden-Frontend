@@ -65,6 +65,7 @@ export default class Home extends Component {
   render() {
     return (
       <div>
+        {/* nice find! */}
         <ToastContainer
           position='top-center'
           autoClose={3000}
@@ -78,6 +79,7 @@ export default class Home extends Component {
         />
 
         <h2>Sign In To Start Planning Your Home or Community Garden</h2>
+        {/* this form should probably be its own component */}
         <div className='container'>
           <div className='form-wrap'>
             <form className='signup' onSubmit={this.handleSignUpSubmit}>
@@ -120,6 +122,7 @@ export default class Home extends Component {
           </div>
         </div>
 
+      {/* this form should probably be its own component */}
         <div className='container'>
           <div className='form-wrap'>
             <form className='signin' onSubmit={this.handleLoginSubmit}>

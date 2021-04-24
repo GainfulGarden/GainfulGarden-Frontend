@@ -44,6 +44,7 @@ export default class Detail extends Component {
       this.props.match.params.id
     );
     await this.setState({
+      // might be nice to match the keys in your getPlantDetails function (or some separate munge util) to keep your components a bit cleaner
       loading: false,
       plantId: plantDetails.main_species_id,
       name: plantDetails.common_name,
@@ -130,6 +131,8 @@ export default class Detail extends Component {
     const wishlist = await getWishlist(this.props.user.token);
     this.setState({ userWishlist: wishlist });
   };
+
+  // this render method should probably be broken into a few separate components for readability and maintainability
 
   render() {
     return (

@@ -93,6 +93,7 @@ export default class Search extends Component {
     this.props.history.push(`/detail/${plant.id}`);
   };
 
+    // might be nice to abstract this into a third place, since you have a very similar function in Details.js
   isInWishlist = (plant) => {
     const inWishlist = this.state.userWishlist.find(
       (wish) => wish.main_species_id === plant.id
@@ -101,6 +102,7 @@ export default class Search extends Component {
     return inWishlist;
   };
 
+  // same here--might be nice to abstract this into a third place, since you have a very similar function in Details.js
   isInGarden = (plant) => {
     const inGarden = this.state.userGarden.find(
       (myPlant) => myPlant.main_species_id === plant.id

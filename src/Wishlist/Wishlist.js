@@ -19,16 +19,16 @@ export default class Wishlist extends Component {
   componentDidMount = async () => {
     this.setState({ loading: true });
 
-    const wishlist = await getWishlist(this.props.user.token);
-    const garden = await getGarden(this.props.user.token);
+    const userWishlist = await getWishlist(this.props.user.token);
+    const userGarden = await getGarden(this.props.user.token);
     // Wrote a new function in ApiUtils to get the data needed to display the plants on the page
-    const wishlistDetails = await getAllPlantInfo(wishlist, this.props.user.token);
+    const detailsWishlist = await getAllPlantInfo(wishlist, this.props.user.token);
 
     this.setState({
-      userGarden: garden,
-      userWishlist: wishlist,
+      userGarden,
+      userWishlist,
+      detailsWishlist,
       loading: false,
-      detailsWishlist: wishlistDetails
     });
   };
 
